@@ -6,46 +6,16 @@ import Analytics from './components/pages/Analytics'
 import Settings from './components/pages/Settings'
 import AddExpense from './components/pages/AddExpense'
 import Header from './components/layout/Header'
+import UseTransactions from './hooks/UseTransactions.js'
 
-function App() {
-  const [totalIncome,setTotalIncome] = useState(0);
-  const [totalExpenses,setTotalExpenses] = useState(0);
-  const [recentTransactions,setRecentTransactions] = useState([]);
-  const [isLoading,setIsLoading] = useState(true);
-  const [allTransactions, setAllTransactions] = useState([]);
+function App({totalIncome,
+        totalExpenses,
+        recentTransactions,
+        allTransactions,
+        isLoading,addTransaction,
+        updateTransaction,
+        deleteTransaction}) {
 
-
-  useEffect(()=>{
-      setTimeout(()=>{
-        setTotalIncome(5000);
-        setTotalExpenses(3200);
-        setRecentTransactions([
-        { id: 1, title: "Coffee Shop", amount: -15, category: "Food" },
-        { id: 2, title: "Salary Payment", amount: 2500, category: "Income" },
-        { id: 3, title: "Gas Station", amount: -45, category: "Transportation" }
-        ]); 
-        setIsLoading(false);
-      }, 1000)
-    },[])
-
-
-  const addTransaction = (newTransaction) => {
-  
-  setAllTransactions(prev => [...prev, newTransaction]);
-  
-  
-  setRecentTransactions(prev => {
-    const updated = [newTransaction, ...prev];
-    return updated.slice(0, 5); 
-  });
-  
-  
-  if (newTransaction.type === 'income') {
-    setTotalIncome(prev => prev + Math.abs(newTransaction.amount));
-  } else {
-    setTotalExpenses(prev => prev + Math.abs(newTransaction.amount));
-  }
-};
 
   return (
     <div className="flex h-screen">

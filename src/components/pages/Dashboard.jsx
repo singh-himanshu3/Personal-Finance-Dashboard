@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import OverviewCard from '../ui/OverviewCard'
 import { DollarSign, TrendingUp, TrendingDown, Wallet } from 'lucide-react'
 import AddExpense from './AddExpense';
+import UseTransactions from '../../hooks/UseTransactions';
 
 function Dashboard({ totalIncome, totalExpenses, recentTransactions, isLoading }) {
 

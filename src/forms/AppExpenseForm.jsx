@@ -72,7 +72,7 @@ function AddExpenseForm({onSubmit }) {
       }
     }
 
-    console.log(amount);
+    
 
 
     const validateForm = ()=>{
@@ -125,19 +125,18 @@ function AddExpenseForm({onSubmit }) {
               Income
             </label>
            </div>
-
         </div>
 
         <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Amount
-        </label>
-        <input type="number" name='amount' value={amount} onChange={handleChange} placeholder='Enter Amount'
-        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-        />
-          {errors.amount && (
-            <p className="text-red-500 text-sm mt-1">{errors.amount}</p>
-          )}
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Amount
+          </label>
+          <input type="number" name='amount' value={amount} onChange={handleChange} placeholder='Enter Amount'
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+            {errors.amount && (
+              <p className="text-red-500 text-sm mt-1">{errors.amount}</p>
+            )}
         </div>
 
         <div className="mb-4">

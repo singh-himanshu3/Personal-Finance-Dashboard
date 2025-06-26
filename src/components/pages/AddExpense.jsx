@@ -10,7 +10,6 @@ function AddExpense({ onAddTransaction }) {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Add New Transaction</h1>
       <AddExpenseForm onSubmit={handleAddTransaction} />
     </div>
   );
